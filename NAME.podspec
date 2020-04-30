@@ -21,20 +21,20 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'http://gitlab.baidao.com/ios/${POD_NAME}'
+  s.homepage         = 'https://gitlab.com/iOS_component/${POD_NAME}'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '8.0'
 
-  ytx_zipURL='http://ios-pod.baidao.com/binaryfiles/${POD_NAME}.zip'
+  ideal_zipURL='https://gitlab.com/iOS_component/binaryfiles/${POD_NAME}.zip'
 
   if ENV['IS_SOURCE'] || ENV["#{s.name}_SOURCE"]
-      s.source           = { :git => "http://gitlab.baidao.com/ios/#{s.name}.git", :tag => s.version.to_s }
+      s.source           = { :git => "https://gitlab.com/iOS_component/#{s.name}.git", :tag => s.version.to_s }
   else
-      s.source           = { :http => ytx_zipURL}
+      s.source           = { :http => ideal_zipURL}
   end
 
   if ENV['IS_SOURCE'] || ENV["#{s.name}_SOURCE"]

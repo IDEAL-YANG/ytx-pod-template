@@ -11,10 +11,10 @@ if [[ ! $URL ]]; then
 	URL=$(cat $PROJECT_NAME.podspec | grep "$URL_KEY" | sed -e "s/$URL_KEY//g" | sed -e "s/\'//g" | sed -e "s/\"//g")
 fi
 
-if [[ ! -d ytxtemp ]]; then
-	mkdir ytxtemp
+if [[ ! -d idealtemp ]]; then
+	mkdir idealtemp
 fi
-cd ytxtemp
+cd idealtemp
 
 RET=$(curl --fail -O -v $URL)
 if [[ -f $PROJECT_NAME.zip && ! $RET ]]; then
@@ -23,4 +23,4 @@ if [[ -f $PROJECT_NAME.zip && ! $RET ]]; then
 fi
 
 cd ..
-rm -fr ytxtemp
+rm -fr idealtemp

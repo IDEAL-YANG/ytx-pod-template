@@ -1,5 +1,7 @@
-source 'http://gitlab.baidao.com/ios/ytx-pod-specs.git'
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitlab.com/Blade-GitLab/Specs.git'
+source 'https://cdn.cocoapods.org'
+
+platform :ios, '8.0'
 
 target '${POD_NAME}_Example' do
   pod '${POD_NAME}', :path => '../'
