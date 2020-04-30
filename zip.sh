@@ -15,14 +15,21 @@ fi
 
 # # 上传到服务器
 
-if [[ ! $(which sshpass) ]]; then
-	brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
-fi
+# if [[ ! $(which sshpass) ]]; then
+# 	brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+# fi
 
-sshpass -p "111111" scp $PROJECT_NAME.zip binaryadmin@ios-pod.baidao.com:/opt/binaryfiles/
+# sshpass -p "111111" scp $PROJECT_NAME.zip binaryadmin@ios-pod.baidao.com:/opt/binaryfiles/
 
-ret=$?
+# ret=$?
 
-if [ "$ret" -ne "0" ];then
-	exit 1
-fi
+# if [ "$ret" -ne "0" ];then
+# 	exit 1
+# fi
+
+git clone git@gitlab.com:iOS_component/binaryfiles.git
+cd binaryfiles
+
+git add $PROJECT_NAME.zip
+git commit -m "add $PROJECT_NAME.zip file"
+git push -u origin master
